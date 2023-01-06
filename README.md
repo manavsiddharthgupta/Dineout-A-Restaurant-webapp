@@ -27,7 +27,7 @@ for parties.
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" />   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="ftailwind" /> 
 
 ```
-git clone https://github.com/manavsiddharthgupta/Invoice-Generator.git
+git clone https://github.com/manavsiddharthgupta/Dineout-A-Restaurant-webapp.git
 
 npm install
 

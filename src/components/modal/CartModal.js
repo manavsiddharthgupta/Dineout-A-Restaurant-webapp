@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState, useEffect } from "react";
+import React, { Fragment, useContext } from "react";
 import ReactDOM from "react-dom";
 import Button from "../Button";
 import { CartContext } from "../cart/CartContext";
@@ -8,14 +8,6 @@ import BackDrop from "./BackDrop";
 
 const CartOverlay = (props) => {
   const cntx = useContext(CartContext);
-  const [cartValidity, setcartValid] = useState(false);
-  useEffect(() => {
-    if (cntx.cart.allItemData.length > 0) {
-      setcartValid(false);
-    } else {
-      setcartValid(true);
-    }
-  }, [cntx.cart.allItemData]);
 
   let cartData = (
     <div className="max-h-[290px] overflow-y-auto p-4">
@@ -61,7 +53,7 @@ const CartOverlay = (props) => {
     </div>
   );
 
-  if (cartValidity) {
+  if (cntx.cart.allItemData < 1) {
     cartData = (
       <div className="text-center">
         <FontAwesomeIcon

@@ -8,43 +8,28 @@ const NavCon = (props) => {
     });
   };
 
+  const allNavItems = [
+    { name: "Home", id: "home" },
+    { name: "About", id: "about" },
+    { name: "Services", id: "service" },
+    { name: "Menu", id: "menu" },
+    { name: "Book Table", id: "bookTable" },
+  ];
+
   return (
     <ul className={`${props.className}`}>
-      <Navitem
-        onClick={() => {
-          scrollToSection(props.scrollableft.home);
-        }}
-      >
-        Home
-      </Navitem>
-      <Navitem
-        onClick={() => {
-          scrollToSection(props.scrollableft.about);
-        }}
-      >
-        About
-      </Navitem>
-      <Navitem
-        onClick={() => {
-          scrollToSection(props.scrollableft.services);
-        }}
-      >
-        Services
-      </Navitem>
-      <Navitem
-        onClick={() => {
-          scrollToSection(props.scrollableft.menu);
-        }}
-      >
-        Menu
-      </Navitem>
-      <Navitem
-        onClick={() => {
-          scrollToSection(props.scrollableft.bookTable);
-        }}
-      >
-        Book Table
-      </Navitem>
+      {allNavItems.map((each) => {
+        return (
+          <Navitem
+            key={each.id}
+            onClick={() => {
+              scrollToSection(props.scrollableft[each.id]);
+            }}
+          >
+            {each.name}
+          </Navitem>
+        );
+      })}
     </ul>
   );
 };
